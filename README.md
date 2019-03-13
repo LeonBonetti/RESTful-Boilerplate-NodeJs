@@ -1,0 +1,1 @@
+# This is a basic boilerplate to construct RESTful apis in Nodejs using typescript, with my lint configurations
