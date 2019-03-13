@@ -1,0 +1,53 @@
+{
+	"name": "realnutriunified",
+	"version": "1.0.0",
+	"description": "RESTful API to realnutri system",
+	"main": "./lib/index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build:commonjs": "rimraf lib && tsc --target es5 --outDir lib --module commonjs --declaration",
+		"build:es": "rimraf es && tsc --target es6 --outDir dist --module es6",
+		"build": "npm run build:commonjs && npm run build:es",
+		"ts": "ts-node src/",
+		"prepublishOnly": "npm run build"
+	},
+	"author": "Leonardo Bonetti",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/bcryptjs": "^2.4.2",
+		"@types/body-parser": "^1.17.0",
+		"@types/dotenv": "^6.1.0",
+		"@types/express": "^4.16.1",
+		"@types/express-validator": "^3.0.0",
+		"@types/jsonwebtoken": "^8.3.2",
+		"@types/morgan": "^1.7.35",
+		"@types/mysql": "^2.15.5",
+		"@types/uid-safe": "^2.1.2",
+		"rimraf": "^2.6.3",
+		"ts-node": "^8.0.3",
+		"tslint": "^5.13.1",
+		"typescript": "^3.3.3333"
+	},
+	"files": [
+		"es",
+		"lib"
+	],
+	"types": "./lib/index.d.ts",
+	"jsnext:main": "./es/index.js",
+	"module": "./es/index.js",
+	"dependencies": {
+		"authenticator": "^1.1.5",
+		"bcryptjs": "^2.4.3",
+		"body-parser": "^1.18.3",
+		"dotenv": "^6.2.0",
+		"express": "^4.16.4",
+		"express-validator": "^5.3.1",
+		"jsonwebtoken": "^8.5.0",
+		"morgan": "^1.9.1",
+		"mysql": "^2.16.0",
+		"mysql2": "^1.6.5",
+		"readline-sync": "^1.4.9",
+		"sha256": "^0.2.0",
+		"uid-safe": "^2.1.5"
+	}
+}
